@@ -2,9 +2,9 @@
 
 import tensorflow.compat.v2 as tf
 
-from google.colab import drive
-from google.colab import output
-from google.colab.output import eval_js
+# from google.colab import drive
+# from google.colab import output
+# from google.colab.output import eval_js
 
 # Model definition
 layers = tf.keras.layers
