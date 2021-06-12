@@ -144,7 +144,7 @@ def main(args):
 
         orig_num_frames = len(imgs)
 
-        if orig_num_frames < 300:
+        if orig_num_frames < 0:
             continue
 
         print('Running RepNet on {}...'.format(video_id))
@@ -227,8 +227,8 @@ def main(args):
 
     results = {'video_results': all_results, 'avg_count_diff': avg_count_diff, 'mae': mae, 'classification': classification_results}
 
-    # out_path = os.path.join(out_dir, 'test_results.json')
-    # write_json(results, out_path)
+    out_path = os.path.join(out_dir, 'test_results.json')
+    write_json(results, out_path)
 
 
 if __name__ == '__main__':
@@ -248,8 +248,11 @@ if __name__ == '__main__':
 python main_inference_nonzero.py \
 --video-dir /vision2/u/enguyen/mini_cba/clipped_videos_fps30 \
 --rate-labels /vision2/u/enguyen/cpr-detection/post_processing_code/data/432/rate_labels_corrected.csv \
---out-dir /vision2/u/enguyen/demos/rate_pred/repnet/inference7 \
---model-dir /vision2/u/enguyen/pretrained_models/repnet/ \
+--out-dir /vision2/u/enguyen/demos/rate_pred/repnet/inference9_all \
+--model-dir /vision2/u/enguyen/pretrained_models/repnet/
+ 
+ 
+ \
 --remove-zeros
 
 '''
